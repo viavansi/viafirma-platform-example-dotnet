@@ -1,0 +1,138 @@
+/* -------------------------------------------------------------------------------
+	Framework genÃ©rico de estilos
+
+	Desarrollado por Servicios Avanzados para las Instituciones S.L. (VIAVANSI)
+	Contacto: comercial@viavansi.com
+	http://www.viavansi.com	
+	
+	Encoding:	UTF-8
+	Autor:		Juan G. Hurtado
+	e-Mail:		jghurtado@viavansi.com
+	
+---------------------------------------------------------------------------------- */
+
+@import url(framework.css);
+
+hr,
+#cabecera p,
+#ayuda {
+    display: none;
+}
+
+body {
+    background: #fff url(../images/layout/body-bg.png) repeat-x 0 0;
+}
+
+a {
+    background: #eee;
+    border: 1px solid #ccc;
+    color: #266E9A;
+    font-weight: bold;
+    padding: 0.5em 1em;
+    text-decoration: none;
+    text-shadow: 1px 1px 0 rgba(255,255,255,.5);
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    border-radius: 10px;
+}
+
+    a:focus, a:hover {
+        background: #eaeaea;
+        border-color: #aaa;
+        text-decoration: none;
+    }
+
+#global {
+    margin: 0 auto;
+    width: 540px;
+}
+
+#cabecera {
+    margin: 2.25em 0;
+}
+
+    #cabecera h1 {
+        background: url(../images/content/logo.png) no-repeat 0 0;
+        height: 79px;
+        margin: 0;
+        padding: 0;
+        width: 249px;
+    }
+
+        #cabecera h1 a {
+            background: transparent;
+            border: 0;
+            display: block;
+            height: 100%;
+            padding: 0;
+            text-indent: -999em;
+            width: 100%;
+            -webkit-border-radius: 0;
+            -moz-border-radius: 0;
+            border-radius: 0;
+        }
+
+#cuerpo {
+    background-color: #f8f8f8;
+    border: 1px solid #c5c5c5;
+    margin-bottom: 1.5em;
+    padding: 0.25em 1.5em;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+}
+
+input[type=submit] {
+    background: #eee;
+    color: #266E9A;
+    border: 0 none;
+    padding: 0.45em 0.95em;
+    font-weight: bold;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+}
+
+a.downloadLink {
+    background: none;
+    font-weight: normal;
+    border: 0;
+    padding: 0;
+    text-shadow: 0;
+    -webkit-border-radius: 0;
+    -moz-border-radius: 0;
+    border-radius: 0;
+}
+
+    a.downloadLink:hover, a.downloadLink:focus {
+        background: none;
+        font-weight: bold;
+        border: 0;
+        padding: 0;
+        text-shadow: 0;
+        -webkit-border-radius: 0;
+        -moz-border-radius: 0;
+        border-radius: 0;
+    }
+
+div#userGuideDiv {
+    margin: 1em;
+}
+
+#userGuideDiv a {
+    background: none;
+    font-weight: bold;
+    border: 0;
+    padding: 0;
+    text-shadow: 0;
+    -webkit-border-radius: 0;
+    -moz-border-radius: 0;
+    border-radius: 0;
+}
+
+p#downloadHelpText {
+    margin: 0px;
+}
+
+ul#windowsAppDownloadList {
+    margin: 0.5em 0 0 1em;
+}

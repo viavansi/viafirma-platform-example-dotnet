@@ -1,0 +1,40 @@
+/* ----------------------------------------------------------
+	Hoja de estilos maestra de la Aplicacion
+
+	Desarrollado por Servicios Avanzados para las Instituciones S.L. (VIAVANSI) 2008
+	Contacto: comercial@viavansi.com
+	http://www.viavansi.com	
+	
+	Encoding:	UTF-8
+	Autor:		Juan G. Hurtado
+	e-Mail:		jghurtado@viavansi.es
+------------------------------------------------------------- */
+
+/* HACK: Esconder de IE/Mac \*/
+@import url("styles.css");
+/* FIN-HACK: Esconder de IE/Mac */
+
+.separador, .enlaceInterno {
+	height: 1px;
+	left: -9999px;
+	position: absolute;
+	top: -9999px;
+	width: 1px;
+}
+
+.clearfix:after {
+    content: "."; 
+    display: block; 
+    height: 0; 
+    clear: both; 
+    visibility: hidden;
+}
+
+.clearfix {display: inline-block;}
+
+.acta {padding-left: 10px; text-decoration: underline; font-weight: bold;}
+
+/* HACK: Esconder de IE/Mac \*/
+* html .clearfix {height: 1%;}
+.clearfix {display: block;}
+/* FIN-HACK: Esconder de IE/Mac */

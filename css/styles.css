@@ -1,0 +1,262 @@
+/* -------------------------------------------------------------------------------
+	Framework genérico de estilos
+
+	Desarrollado por Servicios Avanzados para las Instituciones S.L. (VIAVANSI)
+	Contacto: comercial@viavansi.com
+	http://www.viavansi.com	
+	
+	Encoding:	UTF-8
+	Autor:		Juan G. Hurtado
+	e-Mail:		jghurtado@viavansi.com
+	
+---------------------------------------------------------------------------------- */
+@font-face {
+	font-family: 'VegurMedium';
+	src: url('../fonts/vegur-medium-webfont.eot');
+	src: local('☺'), url('../fonts/vegur-medium-webfont.woff') format('woff'), url('../fonts/vegur-medium-webfont.ttf') format('truetype'), url('../fonts/vegur-medium-webfont.svg#webfontBD0WW2cC') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'VegurRegular';
+	src: url('../fonts/vegur-regular-webfont.eot');
+	src: local('☺'), url('../fonts/vegur-regular-webfont.woff') format('woff'), url('../fonts/vegur-regular-webfont.ttf') format('truetype'), url('../fonts/vegur-regular-webfont.svg#webfontWTt21cKD') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'VegurLight';
+	src: url('../fonts/vegur-light-webfont.eot');
+	src: local('☺'), url('../fonts/vegur-light-webfont.woff') format('woff'), url('../fonts/vegur-light-webfont.ttf') format('truetype'), url('../fonts/vegur-light-webfont.svg#webfontvG09sSad') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'VegurBold';
+	src: url('../fonts/vegur-bold-webfont.eot');
+	src: local('☺'), url('../fonts/vegur-bold-webfont.woff') format('woff'), url('../fonts/vegur-bold-webfont.ttf') format('truetype'), url('../fonts/vegur-bold-webfont.svg#webfontFAw2JaGT') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+body {
+	background: #fff url(../images/layout/body-bg.png) repeat-x 0 0;
+
+}
+a {
+	color: #145694;
+	text-decoration: none;
+}
+
+a:focus, a:hover {
+	text-decoration: underline;
+}
+
+h2 {
+	color: #11518c;
+	font-family: "VegurLight";
+	font-size: 3.0769em;
+	letter-spacing: 0;
+	font-weight: normal;
+	left: 0.5em;
+	text-shadow: 2px 2px 0 rgba(0,0,0,.1);
+}
+
+.parameters {
+	border-top: 1px solid #eee;
+	margin-left: 1em;
+	padding:  0;
+}
+
+	.parameters li {
+		border-bottom: 1px solid #eee;
+		color: #777;
+		font-style: italic;
+		list-style-type: none;
+		padding: 0.25em 0.5em;
+	}
+	
+		.parameters li code {
+			color: #222;
+			display: inline-block;
+			font-style: normal;
+			font-weight: bold;
+			width: 200px;
+		}
+
+.data-list {
+	color: #777;
+	font-style: italic;
+}
+
+	.box .box-content .data-list li {
+		margin-bottom: 1.25em;
+	}
+
+	.data-list a {
+		display: block;
+		font-style: normal;
+	}
+
+.note {
+	color: #888;
+	font-size: 0.9em;
+	font-style: italic;
+}
+
+	.note strong {
+		color: #444;
+	}
+	
+	.note code {
+		color: #444;
+		font-style: normal;
+	}
+
+.button {
+	background: #eee;
+	border: 1px solid #ccc;
+	color: #266E9A;
+	font-weight: bold;
+	padding: 0.5em 1em;
+	text-shadow: 1px 1px 0 rgba(255,255,255,.5);
+	
+	-webkit-border-radius: 10px;
+	-moz-border-radius: 10px;
+	border-radius: 10px;
+}
+
+.button:focus, .button:hover {
+	background: #eaeaea;
+	border-color: #aaa;
+	text-decoration: none;
+}
+
+code {
+	font-family: "Monaco", monospace;
+}
+
+table {
+	border-color: #aabfd2;
+}
+
+	table td,
+	table th {
+		border-color: #aabfd2;
+		padding: 0.5em;
+	}
+	
+	table th {
+		background: #4989c4;
+		color: #fff;
+		text-shadow: 1px 1px 0 rgba(0,0,0,.5);
+	}
+
+.message {
+	background: #efefef;
+	border: 1px solid #ccc;
+	font-size: 1.1em;
+	padding: 0.5em 1em;
+	text-align: center;
+	
+	-webkit-box-shadow: inset 1px 1px 0 #fff, inset -1px -1px 0 #fff;
+	-moz-box-shadow: inset 1px 1px 0 #fff, inset -1px -1px 0 #fff;
+	box-shadow: inset 1px 1px 0 #fff, inset -1px -1px 0 #fff;
+	
+	-webkit-border-radius: 4px;
+	-moz-border-radius: 4px;
+	border-radius: 4px;
+}
+
+.message.error {
+	background-color: #FBE3E4;
+    border-color: #FBC2C4;
+    color: #8A1F11;
+    text-align: left;
+}
+
+.box {
+	background-color: #f8f8f8;
+	border: 1px solid #c5c5c5;
+	margin-bottom: 1.5em;
+	padding: 0.25em;
+	
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+}
+
+	.box .box-title {
+		background: #3f8bb8;
+		border: 1px solid #266e9a;
+		color: #fff;
+		font-family: Arial, sans-serif;
+		font-size: 1em;
+		font-weight: bold;
+		margin: 0;
+		padding: 0.80em 0.75em 0.7em 0.75em;
+		text-shadow: -1px 1px 0 #000;
+		
+		-webkit-border-top-left-radius: 3px;
+		-webkit-border-top-right-radius: 3px;
+		-moz-border-radius-topleft: 3px;
+		-moz-border-radius-topright: 3px;
+		border-top-left-radius: 3px;
+		border-top-right-radius: 3px;
+	}
+	
+	.box .box-content {
+		margin: 0 1em;
+	}
+	
+		.box .box-content ul {
+			margin: 1.5em 0;
+			padding: 0;
+		}
+		
+			.box .box-content ul li {
+				background: url(../images/icons/bullet-01.png) no-repeat 0 0.35em;
+				list-style-type: none;
+				margin-bottom: 0.5em;
+				padding-left: 18px;
+				word-wrap: break-word;
+			}
+
+#wrapper {
+	margin: 0 auto;
+	width: 800px;
+}
+
+#header {
+	margin: 1em 0;
+}
+
+#footer {
+	border-top: 1px solid #eee;
+	color: #999;
+	font-style: italic;
+	margin-top: 2em;
+	text-align: right;
+}
+
+	#footer p {
+		margin-top: 0.5em;
+	}
+
+ 
+.error, .errorTitle {	
+	color: #de0707;
+	font-family: "VegurLight";
+	letter-spacing: 0;
+    line-height: 1em;
+	font-weight: normal;
+	left: 0.5em;	
+    font-size: 2em;
+}
+
+.errorTitle{
+ 	font-size: 2.5em;
+}
