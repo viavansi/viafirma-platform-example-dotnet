@@ -13,10 +13,10 @@ namespace EjemploWebViafirmaClientDotNet
     public class Global : System.Web.HttpApplication
     {
         // URL en la que se encuentra el servidor de Viafirma Utilizado. 
-        public static string URL_VIAFIRMA = "http://192.168.10.114:7080/viafirma";
+        public static string URL_VIAFIRMA = "https://testservices.viafirma.com/viafirma";
               
         // URL en la que se encuentra el WS del servidor de Viafirma Utilizado.
-        public static string URL_WS_VIAFIRMA = "http://192.168.10.114:7080/viafirma";
+        public static string URL_WS_VIAFIRMA = "https://testservices.viafirma.com/viafirma";
        
         //Estos parametros se encuentran en el codigo únicamente por el ejemplo:
         //Alias del certificado instalado en servidor
