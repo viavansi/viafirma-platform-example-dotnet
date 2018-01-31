@@ -2,6 +2,8 @@
 
 En esta aplicación de ejemplo te mostraremos cómo nuestro cliente para .NET permite de una forma muy sencilla integrar aplicaciones desarrolladas en esta tecnología con los servidores que ofrece viafirma platform. Mediante los distintos ejemplos de usos, aprenderás a realizar una operación de autenticación con viafirma platform de cara a obtener los datos del certificado digital del usuario. También aprenderás a realizar firmas con certificados digital y obtener los documentos firmados, así como a poder verificar la validez de dichas firmas.
 
+Está orientado a un perfil de desarrollador habituado a desarrollos en entornos .NET, por lo que el nivel de detalles de algunos aspectos tratados necesitan de un conocimiento previo en esta tecnología.
+
 Desde el siguiente enlace accederás a documentación detallada la cual te será de ayuda a la hora de integrar con nuestra plataforma de firma:
 
 * [Manual de integración de viafirma platform](https://doc.viafirma.com/viafirma-platform/integration/)
