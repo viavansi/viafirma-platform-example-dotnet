@@ -64,10 +64,10 @@
 			</div>
 			<div id="footer">
 				<p class="left">
-					Acceda a <a href="http://www.viafirma.com">Viafirma</a> o consulte más información técnica en <a href="http://developers.viafirma.com/">Viafirma Developers</a> 
+					Acceda a <a href="http://www.viafirma.com">Viafirma</a> o consulte más información técnica en <a href="https://doc.viafirma.com/viafirma-platform/integration/">Manual de integración de viafirma platform</a> 
 				</p>
 				<p>
-					<small>Versión 2.9.60</small>
+					<small>3.0.0</small>
 				</p>
 			</div>
 		</div>
