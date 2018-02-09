@@ -24,6 +24,10 @@ namespace EjemploWebViafirmaClientDotNet
         //Pass del certificado instalado en servidor
         public static string PASS_CERT = "12345";
 
+        public static string API_KEY = "xnoccio";
+
+        public static string PASS_KEY = "12345";
+
         public static String DEMO_FILE_PDF_PATH { get; set; }
         public static String DEMO_P12_PATH { get; set; }
         public static String DEMO_FILE_PDF_PATH_10_PAGS { get; set; }
@@ -43,8 +47,8 @@ namespace EjemploWebViafirmaClientDotNet
             ConfigProperties configProperties = new ConfigProperties();
             configProperties.ViafirmaPublicUrl = URL_VIAFIRMA;
             configProperties.ViafirmaWSUrl = URL_WS_VIAFIRMA;
-            configProperties.ApplicationID = "xnoccio";
-            configProperties.ApplicationPass = "12345";
+            configProperties.ApplicationID = API_KEY;
+            configProperties.ApplicationPass = PASS_KEY;
             configProperties.MaxFileSizeToSign = maxSize;
             //configProperties.ReturnUrl = "http://localhost:58082";
 
