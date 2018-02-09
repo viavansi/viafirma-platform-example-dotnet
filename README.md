@@ -16,4 +16,4 @@ Una vez cumplido el requisito anterior, basta con ejecutar el archivo **EjemploW
 
 Para más información sobre cómo configurar y usar el ejemplo de viafirma platform en .NET, visitar el siguiente enlace: 
 
-* [Configuración de ejemplo en .NET](Manual en construcción)
+* [Aplicación de ejemplo en .NET](https://doc.viafirma.com/viafirma-platform/integration/aplicacion_ejemplo_net.html)
