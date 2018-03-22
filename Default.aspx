@@ -25,6 +25,7 @@
 							<div class="box-content">
 								<ul>
 					                <li><a href="login.aspx" title="Autenticar al usuario con Viafirma">Autenticar al usuario con Viafirma</a></li>
+                                    <li><a href="loginDirectViafirmaDesktop.aspx" title="Autenticar al usuario invocando a Viafirma Desktop por protocolo">Autenticar al usuario invocando a Viafirma Desktop por protocolo</a></li>
 				                </ul>
 							</div>
 						</div>
@@ -44,7 +45,7 @@
                                     
                                     <li><a href="firmaPolicy/default.aspx" 
                                             title="Otros ejemplos de firma">Otros ejemplos de firma</a></li>
-                                     
+                                    <li><a href="signatureDirectViafirmaDesktop.aspx" title="Firmar invocando a Viafirma Desktop por protocolo">Firmar invocando a Viafirma Desktop por protocolo</a></li>                     
 			                    </ul>
 							</div>
 						</div>
@@ -74,10 +75,10 @@
 			</div>
 			<div id="footer">
 				<p class="left">
-					Acceda a <a href="http://www.viafirma.com">Viafirma</a> o consulte más información técnica en <a href="https://doc.viafirma.com/viafirma-platform/integration/">Manual de integración de viafirma platform</a> 
+					Acceda a <a href="http://www.viafirma.com">Viafirma</a> o consulte más información técnica en <a href="http://developers.viafirma.com/">Viafirma Developers</a> 
 				</p>
 				<p>
-					3.0.0
+					Versión 2.9.60
 				</p>
 			</div>
 		</div>
