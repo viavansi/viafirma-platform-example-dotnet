@@ -28,6 +28,7 @@ namespace EjemploWebViafirmaClientDotNet
 
             AuthOperationRequest request = new AuthOperationRequest();
             request.AutoSend = true;
+            request.SessionId = HttpContext.Current.Session.SessionID;
             desktopInvocation = await clienteViafirma.PrepareAuthForDirectDesktopAsync(request);
         }
     }

@@ -53,14 +53,17 @@
                                         // If the authentication runs ok, this function is invoked - customize it with your own logic 
                                         // For instance, probably you will need to invoke an internal REST service that receives the authentication response object
                                         function showSuccess(response) {
-                                            document.getElementById("loading").innerHTML = "";
+                             	            window.location.replace("./exampleAuthenticationViafirmaDesktopResult.aspx?operationId=" + response.operationId);
+                                	        // This code shows operation data in screen... but it is just a sample. It would not be safe to invoke a service with this data,
+                                	        // since (probably) any attacker could invoke the same service with fake data, being able to impersonate a 3rd user
+                                            //document.getElementById("loading").innerHTML = "";
 
-                                            document.getElementById("authSuccess").innerHTML = "<p>Operación de autenticación realizada con éxito. Información obtenida:</p><ul>" +
-                                                "<li><strong>ID de operación</strong>: " + response.operationId + "</li>" +
-                                                "<li><strong>Identificación usuario</strong>: " + response.numberUserId + "</li>" +
-                                                "<li><strong>Usuario</strong>: " + response.name + " " + response.surname1 + " " + response.surname2 + "</li>" +
-                                                "<li><strong>CA</strong>: " + response.shortCa + "</li>" +
-                                                "</ul>";
+                                            //document.getElementById("authSuccess").innerHTML = "<p>Operación de autenticación realizada con éxito. Información obtenida:</p><ul>" +
+                                            //    "<li><strong>ID de operación</strong>: " + response.operationId + "</li>" +
+                                            //    "<li><strong>Identificación usuario</strong>: " + response.numberUserId + "</li>" +
+                                            //    "<li><strong>Usuario</strong>: " + response.name + " " + response.surname1 + " " + response.surname2 + "</li>" +
+                                            //    "<li><strong>CA</strong>: " + response.shortCa + "</li>" +
+                                            //    "</ul>";
                                         }
                                         // Here we initialize the viafirma.js polling 
                                         function initAuth() {

@@ -52,15 +52,16 @@
                                         // If the signature operation runs ok, this function is invoked - customize it with your own logic 
                                         // For instance, probably you will need to invoke an internal REST service that receives the signature response object
                                         function showSuccess(response) {
-                                            document.getElementById("loading").style = "display: none;";
+                                            window.location.replace("./exampleSignatureViafirmaDesktopResult.aspx?operationId=" + response.operationId);
+                                            //document.getElementById("loading").style = "display: none;";
 
-                                            document.getElementById("signatureSuccess").innerHTML = "<p>Operación de firma realizada con éxito. Información obtenida:</p><ul>" +
-                                                "<li><strong>ID de operación</strong>: " + response.operationId + "</li>" +
-                                                "<li><strong>Identificación usuario</strong>: " + response.certificateValidationData.numberUserId + "</li>" +
-                                                "<li><strong>Usuario</strong>: " + response.certificateValidationData.name + " " + response.certificateValidationData.surname1 + " " + response.certificateValidationData.surname2 + "</li>" +
-                                                "<li><strong>CA</strong>: " + response.certificateValidationData.shortCa + "</li>" +
-                                                "<li><strong>ID Firma</strong>: " + response.signatureId + "</li>" +
-                                                "</ul>";
+                                            //document.getElementById("signatureSuccess").innerHTML = "<p>Operación de firma realizada con éxito. Información obtenida:</p><ul>" +
+                                            //    "<li><strong>ID de operación</strong>: " + response.operationId + "</li>" +
+                                            //    "<li><strong>Identificación usuario</strong>: " + response.certificateValidationData.numberUserId + "</li>" +
+                                            //    "<li><strong>Usuario</strong>: " + response.certificateValidationData.name + " " + response.certificateValidationData.surname1 + " " + response.certificateValidationData.surname2 + "</li>" +
+                                            //    "<li><strong>CA</strong>: " + response.certificateValidationData.shortCa + "</li>" +
+                                            //    "<li><strong>ID Firma</strong>: " + response.signatureId + "</li>" +
+                                            //    "</ul>";
                                         }
                                         // Here we initialize the viafirma.js polling 
                                         function initSignature() {
