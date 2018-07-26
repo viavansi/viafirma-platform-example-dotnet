@@ -55,11 +55,11 @@ namespace EjemploWebViafirmaClientDotNet
             OperationFile file = new OperationFile();
             file.Filename = "example.pdf";
             file.Base64Content = System.Convert.ToBase64String(datos_a_firmar);
-
+            file.Policy = pol;
             List<OperationFile> files = new List<OperationFile>();
             files.Add(file);
 
-            desktopInvocation = await clienteViafirma.PrepareSignatureForDirectDesktopAsync(authRequest, files, pol, sessionId, locale);
+            desktopInvocation = await clienteViafirma.PrepareSignatureForDirectDesktopAsync(authRequest, files, sessionId, locale);
             System.Console.Write("OperationId: " + desktopInvocation.OperationId);
         }
     }
