@@ -10,7 +10,7 @@
 namespace EjemploWebViafirmaClientDotNet {
     
     
-    public partial class exampleSignatureViafirmaDesktopResult {
+    public partial class exampleSSLClientAuthResult {
         
         /// <summary>
         /// DataListResult control.

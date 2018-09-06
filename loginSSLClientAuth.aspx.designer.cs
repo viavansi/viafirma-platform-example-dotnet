@@ -10,15 +10,24 @@
 namespace EjemploWebViafirmaClientDotNet {
     
     
-    public partial class exampleSignatureViafirmaDesktopResult {
+    public partial class loginSSLClientAuth {
         
         /// <summary>
-        /// DataListResult control.
+        /// form_ssl_client_auth control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DataList DataListResult;
+        protected global::System.Web.UI.HtmlControls.HtmlForm form_ssl_client_auth;
+        
+        /// <summary>
+        /// SSL_client_Auth control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button SSL_client_Auth;
     }
 }

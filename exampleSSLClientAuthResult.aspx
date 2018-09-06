@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" Async="true" CodeBehind="exampleAuthenticationViafirmaDesktopResult.aspx.cs" Inherits="EjemploWebViafirmaClientDotNet.exampleAuthenticationViafirmaDesktopResult" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" Async="true" CodeBehind="exampleSSLClientAuthResult.aspx.cs" Inherits="EjemploWebViafirmaClientDotNet.exampleSSLClientAuthResult" %>
 
 <!DOCTYPE html>
 
@@ -19,9 +19,14 @@
 <div id="wrapper">
 
 			<h1 id="header"><a href=".."><img src="../images/content/logo.png" alt="Viafirma" /></a></h1>
-
+		    <script type="text/javascript">
+			    document.execCommand("ClearAuthenticationCache");
+			    if(window.crypto) {
+				    window.crypto.logout();
+			    }
+		    </script>
 			<div id="content">
-                <h2>Resultado del proceso de autenticación por invocación directa a Viafirma Desktop</h2>
+                <h2>Resultado del proceso de autenticación mediante SSL client auth</h2>
                 <asp:DataList ID="DataListResult" runat="server">
 
                     <ItemTemplate>
@@ -51,7 +56,7 @@
                     </ItemTemplate>
 
                 </asp:DataList>
-				<p>
+                <p>
 				    <a href="./">&larr; Volver</a>
 				</p>
             </div>

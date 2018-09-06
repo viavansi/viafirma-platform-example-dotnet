@@ -26,6 +26,7 @@
 								<ul>
 					                <li><a href="login.aspx" title="Autenticar al usuario con Viafirma">Autenticar al usuario con Viafirma</a></li>
                                     <li><a href="loginDirectViafirmaDesktop.aspx" title="Autenticar al usuario invocando a Viafirma Desktop por protocolo">Autenticar al usuario invocando a Viafirma Desktop por protocolo</a></li>
+                                    <li><a href="loginSSLClientAuth.aspx" title="Autenticar al usuario sin cliente rico (SSL)">Autenticar al usuario sin cliente rico (SSL)</a></li>
 				                </ul>
 							</div>
 						</div>
