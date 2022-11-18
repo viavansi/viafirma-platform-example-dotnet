@@ -24,8 +24,8 @@
 							<h3 class="box-title">Firma Digitalizada</h3>
 							
 							<div class="box-content">
-								<p>En este ejemplo se realiza la firma Digitalizada de un documento PDF con Viafirma, requiere la intervención directa del usuario.</p>
-                                <p>Para firmas digitalizadas es necesario el uso de una tableta digitalizadora en Windows o algún dispositivo movil Android o iPhone con la app de viafirma instalada</p>
+								<p>En este ejemplo se realiza la firma <strong>digitalizada</strong> de un documento PDF, requiere la intervención directa del usuario.</p>
+                                <p>Para firmas digitalizadas es necesario el uso de una tableta digitalizadora o algún dispositivo movil Android o iPhone con la app de viafirma mobile instalada</p>
 							
 								<form id="form1" runat="server">
 				                        <asp:button id="Button1" runat="server" text="Iniciar firma Digitalizada" 
@@ -40,7 +40,16 @@
 							<h3 class="box-title">Métodos utilizados</h3>
 							<div class="box-content">
 								<ul>
-									<li>PrepareFirmaWithTypeFileAndFormatSign</li>
+									<li>prepareSignWithPolicy</li>
+									<li><code>Params:</code>
+										<ul>
+											<li><code>PolicyParams.DIGITALIZED_SIGN_BACK_COLOUR</code></li>
+											<li><code>PolicyParams.DIGITALIZED_SIGN_COLOUR</code></li>
+											<li><code>PolicyParams.DIGITALIZED_SIGN_HELP_TEXT</code></li>
+											<li><code>PolicyParams.DIGITALIZED_SIGN_LOGO</code></li>
+											<li><code>PolicyParams.DIGITALIZED_SIGN_RECTANGLE</code></li>
+										</ul>
+									</li>
 					                <li>Sign</li>
 								</ul>
 							</div>

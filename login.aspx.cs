@@ -29,7 +29,11 @@ namespace EjemploWebViafirmaClientDotNet
             // Iniciamos el proceso de autenticar redireccionando el usuario a Viafirma.
             ViafirmaClient clienteViafirma = ViafirmaClientFactory.GetInstance();
 
+            clienteViafirma.AddOptionalRequest(ViafirmaClient.AUTO_SEND);
+            clienteViafirma.AddOptionalRequest(ViafirmaClient.PEM);
+
             policy pol = new policy();
+
 
             clienteViafirma.AuthWithPolicy(pol);
         }

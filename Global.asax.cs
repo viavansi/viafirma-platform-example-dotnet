@@ -12,12 +12,17 @@ namespace EjemploWebViafirmaClientDotNet
 {
     public class Global : System.Web.HttpApplication
     {
+
+
+
         // URL en la que se encuentra el servidor de Viafirma Utilizado. 
-        public static string URL_VIAFIRMA = "https://testservices.viafirma.com/viafirma";
-              
+        public static string URL_VIAFIRMA = "https://testservices.viafirma.com/viafirma/tokenConnector";
+        //public static string URL_VIAFIRMA = "https://ci.viafirma.com/platform/tokenConnector";
+
         // URL en la que se encuentra el WS del servidor de Viafirma Utilizado.
         public static string URL_WS_VIAFIRMA = "https://testservices.viafirma.com/viafirma";
-       
+        //public static string URL_WS_VIAFIRMA = "https://ci.viafirma.com/platform/viafirma";
+
         //Estos parametros se encuentran en el codigo únicamente por el ejemplo:
         //Alias del certificado instalado en servidor
         public static string ALIAS = "xnoccio";
@@ -41,8 +46,9 @@ namespace EjemploWebViafirmaClientDotNet
 
         protected void Application_Start(object sender, EventArgs e)
         {
-            int maxSize = 1024;
+            int maxSize = 20;
             //ViafirmaClientFactory.Init(URL_VIAFIRMA, URL_WS_VIAFIRMA, "xnoccio", "12345", maxSize);
+            //ViafirmaClientFactory.Init(URL_VIAFIRMA, URL_WS_VIAFIRMA, "dev_orbit", "YHTYBKTASGKHF0NC77NJC13F027RC", maxSize);
 
             ConfigProperties configProperties = new ConfigProperties();
             configProperties.ViafirmaPublicUrl = URL_VIAFIRMA;

@@ -22,7 +22,8 @@ namespace EjemploWebViafirmaClientDotNet.utils
         protected void Page_Load(object sender, EventArgs e)
         {
         }
-        public void ComprobarValidoButton_Click(object sender, EventArgs e)
+
+       public void ComprobarValidoButton_Click(object sender, EventArgs e)
         {
             //Recuperamos la instancia del cliente
             ViafirmaClient clienteViafirma = ViafirmaClientFactory.GetInstance();
@@ -40,6 +41,8 @@ namespace EjemploWebViafirmaClientDotNet.utils
             // Y comprobamos su validez
             infoFirma = clienteViafirma.checkOriginalDocumentSigned(documento, idFirma);
         }
+
+        [Obsolete]
         public void ComprobarNoValidoButton_Click(object sender, EventArgs e)
         {
             //Recuperamos la instancia del cliente

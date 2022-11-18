@@ -35,6 +35,17 @@
 								</ul>
 							</div>
 						</div>
+
+						<div class="box">
+							<h3 class="box-title">Firma digitalizada</h3>
+				
+							<div class="box-content">
+								<ul>
+									<li><a href="signatureDigitalized_01.aspx"> Firma digitalizada avanzada con Tableta de firma (Wacom, Topaz)</a></li>
+                                    <li><a href="signatureDigitalizedDesktop.aspx"> Firma digitalizada avanzada invocando a Viafirma Desktop por protocolo</a></li>
+								</ul>
+							</div>
+						</div>
 					</div>
 					<div class="group">
 					<div class="col width-49 prepend">

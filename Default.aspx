@@ -47,6 +47,7 @@
                                     <li><a href="firmaPolicy/default.aspx" 
                                             title="Otros ejemplos de firma">Otros ejemplos de firma</a></li>
                                     <li><a href="signatureDirectViafirmaDesktop.aspx" title="Firmar invocando a Viafirma Desktop por protocolo">Firmar invocando a Viafirma Desktop por protocolo</a></li>                     
+									<li><a href="signatureDirectViafirmaDesktopParallel.aspx" title="Firmar varios documentos en bucle, invocando a Viafirma Desktop por protocolo">Firmar varios documentos en bucle, invocando a Viafirma Desktop por protocolo</a></li>
 			                    </ul>
 							</div>
 						</div>

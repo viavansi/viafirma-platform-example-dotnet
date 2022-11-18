@@ -1,4 +1,4 @@
-<%@ Page Language="C#"  %>
+﻿<%@ Page Language="C#"  %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
 <script runat="server">
@@ -34,7 +34,7 @@
 			<h1 id="header"><a href=""><img src="images/content/logo.png" alt="Viafirma" /></a></h1>
 			
 			<div id="content">	
-				<h2>Resultado del proceso de autenticacion</h2>
+				<h2>Resultado del proceso de autenticación</h2>
 
 					
 					<table>
@@ -43,7 +43,7 @@
 							<tr><td>Number User Id</td><td><%=  ((Viafirma.UsuarioGenericoViafirma)Session["resultadoAutenticacion"]).NumberUserId%></td></tr>
 							<tr><td>E-mail</td><td><%=  ((Viafirma.UsuarioGenericoViafirma)Session["resultadoAutenticacion"]).Email%></td></tr>
 							<tr><td>Ca Name</td><td><%=  ((Viafirma.UsuarioGenericoViafirma)Session["resultadoAutenticacion"]).CaName%></td></tr>
-						<!--<tr><td>Oids</td><td><%=  ((Viafirma.UsuarioGenericoViafirma)Session["resultadoAutenticacion"]).Properties%></td></tr>-->
+						    <%--<tr><td>Oids</td><td><%=  ((Viafirma.UsuarioGenericoViafirma)Session["resultadoAutenticacion"]).Properties%> </td></tr>--%>
 							<tr><td>Type Certificate</td><td><%=  ((Viafirma.UsuarioGenericoViafirma)Session["resultadoAutenticacion"]).TypeCertificate%></td></tr>
 							<tr><td>Type Legal</td><td><%=  ((Viafirma.UsuarioGenericoViafirma)Session["resultadoAutenticacion"]).TypeLegal%></td></tr>
 					</table>

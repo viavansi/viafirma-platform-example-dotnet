@@ -40,6 +40,8 @@ namespace EjemploWebViafirmaClientDotNet.firmaUser
             //Recuperamos la instancia del cliente
             ViafirmaClient clienteViafirma = ViafirmaClientFactory.GetInstance();
 
+            clienteViafirma.AddOptionalRequest(ViafirmaClient.PEM);
+
             // Recuperamos el documento a firmar.
             Assembly assembly = Assembly.GetExecutingAssembly();
             Stream fs = assembly.GetManifestResourceStream(Global.DEMO_FILE_PDF_PATH);
@@ -79,6 +81,10 @@ namespace EjemploWebViafirmaClientDotNet.firmaUser
                 //Creamos la politica de firma
                 policy pol = PolicyUtil.newPolicy(typeFormatSign, typeSign.ENVELOPED);
 
+                PolicyUtil.AddParameter(pol, PolicyParams.DIGITAL_SIGN_STAMPER_HIDE_STATUS, "true");
+                PolicyUtil.AddParameter(pol, PolicyParams.DIGITAL_SIGN_STAMPER_TEXT, " ");
+                rectangle rect = PolicyUtil.newRectangle(0, 0, 0, 0);
+                PolicyUtil.AddParameter(pol, PolicyParams.DIGITAL_SIGN_RECTANGLE, PolicyUtil.rectangleToJson(rect));
 
                 // Registramos el documento que deseamos firmar. Obteniendo un identificador temporal.
                 // Este identificador temporal no es necesario que sea almacenado ya que sólo tiene validez durante el proceso de firma.

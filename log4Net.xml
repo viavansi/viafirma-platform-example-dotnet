@@ -1,7 +1,7 @@
 ﻿<log4net>
 
   <appender name="RollingFile" type="log4net.Appender.RollingFileAppender">
-    <file value="log\Log1.log" />
+    <file value="log\EjemploViafirmaDotNet.log" />
     <appendToFile value="true" />
     <maximumFileSize value="100KB" />
     <maxSizeRollBackups value="2" />

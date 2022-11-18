@@ -8,22 +8,55 @@ using ViafirmaClientDotNet.Handler.DirectDesktop.Model.Response;
 
 namespace EjemploWebViafirmaClientDotNet
 {
+    public class StringValue
+    {
+        public StringValue(string s)
+        {
+            _value = s;
+        }
+        public string Id { get { return _value; } set { _value = value; } }
+        string _value;
+    }
+
     public partial class exampleSignatureViafirmaDesktopResult : System.Web.UI.Page
     {
-        string operationId;
+        public string operationId;
+        List<StringValue> SignatureIds = new List<StringValue>();
 
         protected async void Page_Load(object sender, EventArgs e)
         {
             operationId = Request.QueryString["operationId"];
             string sessionId = HttpContext.Current.Session.SessionID;
 
-            SignatureResponse response = new SignatureResponse();
-            List<SignatureResponse> list = new List<SignatureResponse>();
-            SignatureResponse signatureResponse = await ViafirmaClientFactory.GetInstance().GetSignatureResponse(operationId, sessionId);
-            list.Add(signatureResponse);
+            if (!String.IsNullOrEmpty(operationId))
+            {
+                SignatureResponse response = new SignatureResponse();
+                List<SignatureResponse> list = new List<SignatureResponse>();
+                SignatureResponse signatureResponse = await ViafirmaClientFactory.GetInstance().GetSignatureResponse(operationId, sessionId);
 
-            DataListResult.DataSource = list;
-            DataListResult.DataBind();
+                string signatureId = signatureResponse.signatureId;
+
+                // Si el id contiene el carácter ";" es una firma múltiple
+                if (signatureId.Contains(";"))
+                {
+                    foreach (string id in signatureId.Split(';'))
+                    {
+                        SignatureIds.Add(new StringValue(id));
+                    }
+                }
+                else
+                {
+                    SignatureIds.Add(new StringValue(signatureId));
+                }
+
+                list.Add(signatureResponse);
+
+                DataListResult.DataSource = list;
+                DataListResult.DataBind();
+
+                SignatureListResult.DataSource = SignatureIds;
+                SignatureListResult.DataBind();
+            }
         }
 
         public void Download_Click(Object sender, EventArgs e)

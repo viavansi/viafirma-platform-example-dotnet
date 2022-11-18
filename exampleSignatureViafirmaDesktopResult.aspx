@@ -23,6 +23,11 @@
 
         <div id="content">
             <h2>Resultado del proceso de firma por invocación directa a Viafirma Desktop</h2>
+
+            <p><strong>ID de Operación: </strong><%=operationId%></p>
+
+            <p><strong>Datos del certificado</strong></p>
+
             <asp:DataList ID="DataListResult" runat="server">
 
                 <ItemTemplate>
@@ -69,28 +74,28 @@
                         </tbody>
 
                     </table>
+                  </ItemTemplate>
+            </asp:DataList>
 
+            <p><strong>Resultado del proceso de firma. Documentos firmados</strong></p>
+
+            <asp:DataList ID="SignatureListResult" runat="server">
+                <ItemTemplate>
+                    <%# Eval("Id")%> <br \ />
                     <p class="codBarras">
-                        <img alt="Imagen QR de justificante del resultado de la firma del fichero" width="500" src="<%=global_asax.URL_VIAFIRMA %>/downloadComprobanteQR?codFirma=<%# Eval("signatureId")%>&amp;tipo=png" title="Imagen QR de justificante del resultado de la firma del fichero" />
+                        <img alt="Imagen QR de justificante del resultado de la firma del fichero" width="500" src="<%=global_asax.URL_VIAFIRMA %>/downloadComprobanteQR?codFirma=<%# Eval("Id")%>&amp;tipo=png" title="Imagen QR de justificante del resultado de la firma del fichero" />
+                    </p>
+
+                   <p class="descargaComprobante">
+                        <a class="descarga" target="_blank" href="<%=global_asax.URL_VIAFIRMA%>/v/<%# Eval("Id")%>?j" title="Descargar Comprobante">Descarga de comprobante de firma</a>
                     </p>
 
                     <p class="descargaComprobante">
-
-                        <a class="descarga" target="_blank" href="<%=global_asax.URL_VIAFIRMA%>/v/<%# Eval("signatureId")%>?j" title="Descargar Comprobante">Descarga de comprobante de firma</a>
-
+                        <a class="descarga" target="_blank" href="<%=global_asax.URL_VIAFIRMA%>/v/<%# Eval("Id")%>?d" title="Descargar Documento firmado">Descarga de documento firmado</a>
                     </p>
 
                     <p class="descargaComprobante">
-
-                        <a class="descarga" target="_blank" href="<%=global_asax.URL_VIAFIRMA%>/v/<%# Eval("signatureId")%>?d" title="Descargar Documento firmado">Descarga de documento firmado</a>
-
-                    </p>
-
-                    <p class="descargaComprobante">
-                        <%--<a class="descarga" target="_blank" href="utils/getOriginalDocument.aspx?id=<%# Eval("signatureId")%>" title="Descargar Documento original">Descarga de documento original</a>--%>
-                        <form id="form1" runat="server">
-                            <asp:LinkButton CssClass="descarga" ID="download" OnClick="Download_Click" Text="Descargar Documento original" runat="server" CommandArgument=<%# Eval("signatureId")%>/>
-                        </form>
+                        <a class="descarga" target="_blank" href="<%=global_asax.URL_VIAFIRMA%>/v/<%# Eval("Id")%>?o" title="Descargar Documento firmado">Descarga de documento original</a>
                     </p>
 
                 </ItemTemplate>

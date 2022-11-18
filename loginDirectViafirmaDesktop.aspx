@@ -77,7 +77,8 @@
                                             viafirma.init({
                                                 // Here we include 
                                                operationId: "<%=desktopInvocation.OperationId%>",
-                                               viafirmaUrl: "<%=Viafirma.ViafirmaClientFactory.GetInstance().UrlPublica%>/",
+                                                viafirmaUrl: "<%=Viafirma.ViafirmaClientFactory.GetInstance().UrlPublica%>/",
+                                                unloadedTime: 30,
                                                errorCallback: function (response) {
                                                    showError(response);
                                                },

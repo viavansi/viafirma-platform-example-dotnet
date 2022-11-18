@@ -33,9 +33,12 @@ namespace EjemploWebViafirmaClientDotNet.firmaServer
 
             // Recuperamos el documento a firmar.
             Assembly assembly = Assembly.GetExecutingAssembly();
-            Stream fs = assembly.GetManifestResourceStream(Global.DEMO_FILE_PDF_PATH);
-            byte[] datos_a_firmar = new byte[fs.Length];
-            fs.Read(datos_a_firmar, 0, datos_a_firmar.Length);
+            //Stream fs = assembly.GetManifestResourceStream(Global.DEMO_FILE_PDF_PATH);
+            //byte[] datos_a_firmar = new byte[fs.Length];
+            //fs.Read(datos_a_firmar, 0, datos_a_firmar.Length);
+
+            byte[] datos_a_firmar = File.ReadAllBytes("C:\\Users\\ruben\\Downloads\\20200330_Firma_Portafirmas-Externos.pdf");
+
 
             // En algunos casos, por ejemplo en el arranque de la aplicación puede ser interesante
             // Comprobar que efectivamente el servidor de firma está disponible

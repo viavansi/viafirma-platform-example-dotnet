@@ -60,7 +60,7 @@
                                             //    "<li><strong>Identificación usuario</strong>: " + response.certificateValidationData.numberUserId + "</li>" +
                                             //    "<li><strong>Usuario</strong>: " + response.certificateValidationData.name + " " + response.certificateValidationData.surname1 + " " + response.certificateValidationData.surname2 + "</li>" +
                                             //    "<li><strong>CA</strong>: " + response.certificateValidationData.shortCa + "</li>" +
-                                            //    "<li><strong>ID Firma</strong>: " + response.signatureId + "</li>" +
+                                            //    "<li><strong>ID Firma</strong>: " + respons<a href="utils/getDocumentoCustodiado.aspx">utils/getDocumentoCustodiado.aspx</a>e.signatureId + "</li>" +
                                             //    "</ul>";
                                         }
                                         // Here we initialize the viafirma.js polling 
@@ -76,6 +76,7 @@
                                                // Here we include 
                                                 operationId: "<%=desktopInvocation.OperationId%>",
                                                 viafirmaUrl: "<%=Viafirma.ViafirmaClientFactory.GetInstance().UrlPublica%>/",
+                                                unloadedTime: 50,
                                                 errorCallback: function (response) {
                                                    showError(response);
                                                 },
@@ -87,7 +88,7 @@
                                                 }
                                             });
                                         }
-                                </script>
+                                    </script>
                                 <p id="signatureError"></p>
                                 <p id="signatureCancel"></p>
                                 <p id="signatureSuccess"></p>
@@ -126,7 +127,7 @@
 					Acceda a <a href="http://www.viafirma.com">Viafirma</a> o consulte más información técnica en <a href="http://developers.viafirma.com/">Viafirma Developers</a> 
 				</p>
 				<p>
-					<small>Versión 2.9.60</small>
+					<small>Versión 3.0.0</small>
 				</p>
 			</div>
 		</div>

@@ -40,17 +40,20 @@ namespace EjemploWebViafirmaClientDotNet.utils
             // Añadimos el parámetro SignatureStandard
             VerifyUtil.AddParameter(verificationSignatureRequest, signatureStandardKey, signatureStandardValue);
 
+            String filePath = "C:\\Users\\rquintero\\Downloads\\tragsa.pdf";
+            verificationSignatureRequest.signedDocument = File.ReadAllBytes(filePath);
+
             // TypeSign
             String typeSignKey = VerifyParams.TYPE_SIGN_KEY;
-            String typeSignValue = VerifyParams.ENVELOPED_TYPE_SIGN;
+            String typeSignValue = VerifyParams.ATTACHED_TYPE_SIGN;
             // Añadimos el parámetro TypeSign
             VerifyUtil.AddParameter(verificationSignatureRequest, typeSignKey, typeSignValue);
 
             // Sign ID
-            String signIdKey = VerifyParams.SIGNATURE_ID_KEY;
-            String signIdValue = signId;
+            //String signIdKey = VerifyParams.SIGNATURE_ID_KEY;
+            //String signIdValue = signId;
             // Añadimos el parámetro TypeSign
-            VerifyUtil.AddParameter(verificationSignatureRequest, signIdKey, signIdValue);
+            //VerifyUtil.AddParameter(verificationSignatureRequest, signIdKey, signIdValue);
 
             signatureVerification = viafirmaClient.verifySignature(verificationSignatureRequest);
 
