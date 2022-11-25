@@ -23,12 +23,25 @@
 							<h3 class="box-title">Verificar que la firma sea válida</h3>
 							
 							<div class="box-content">
-								<p>En este ejemplo se realiza la comprobación de una firma si es válido. Se le pasará al servidor el identificador de la firma a validar.</p>
-								<form id="form1" runat="server">
+								<p>En este ejemplo se sube un documento firmado para posteriormente comprobar que la firma es válida.</p>
+								<form id="form1" runat="server" enctype="multipart/form-data" >
+									Adjunta el documento firmado<br/>
 									<p>
-										Sign ID    
-										<input type="text" name="signId"/>
+										<!-- <input type="text" name="signId"/> -->
+										<input type="file" name="SignedFile" />
 									</p>
+
+									<p>Selecciona el tipo de firma<br/>
+										<p>
+										  <input type="radio" name="signatureStandard" value="PADES" checked="checked">
+											PADES
+										  <input type="radio" name="signatureStandard" value="XADES">
+											XADES								  
+										  <input type="radio" name="signatureStandard" value="CADES">
+											CADES
+										</p>
+									<p>
+
                                     <asp:Button id="Button1" runat="server" text="Verificar firma" 
                                             onClick="verifySignButton_Click" PostBackUrl=""/>
 								</form>
@@ -60,9 +73,41 @@
 					    <div class="box-content">
 						    <p>Estado: <%=signatureVerify.signatureStatus%><br/></p>
                             <p>Mensaje: <%=signatureVerify.message%><br/></p>
-                            <p>Fecha: <%=signatureVerify.signTimeStamp%><br/></p>
+                            <p>Fecha de firma: <%=signatureVerify.signTimeStamp%><br/></p>
 				        </div>
-                    </div>   
+
+						<div class="box-content">
+							<p>
+								<strong>NIF: </strong><%=signatureVerify.certificateResponseList[0].numberUserId%>
+							</p>
+							<p>
+								<strong>Nombre: </strong><%=signatureVerify.certificateResponseList[0].firstName%>
+							</p>
+							<p>
+								<strong>Apellido: </strong><%=signatureVerify.certificateResponseList[0].lastName%>
+							</p>
+							<p>
+								<strong>Email: </strong><%=signatureVerify.certificateResponseList[0].email%>
+							</p>
+							<p>
+								<strong>Tipo de cetificado: </strong><%=signatureVerify.certificateResponseList[0].typeCertificate%>
+							</p>
+							<p>
+								<strong>Tipo Legal: </strong><%=signatureVerify.certificateResponseList[0].typeLegal%>
+							</p>
+							<p>
+								<strong>Autoridad de certificación: </strong><%=signatureVerify.certificateResponseList[0].caName%>
+							</p>
+							<p>
+								<strong>Mensaje: </strong><%=signatureVerify.certificateResponseList[0].message%>
+							</p>
+							<p>
+								<strong>Estado: </strong><%=signatureVerify.certificateResponseList[0].certificateStatus%>
+							</p>
+								
+						</div>
+                    </div>
+				
                 <%  }
                 } %>
 

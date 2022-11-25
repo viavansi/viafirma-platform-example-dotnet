@@ -27,33 +27,38 @@ namespace EjemploWebViafirmaClientDotNet.utils
             //Recuperamos la instancia del cliente
             ViafirmaClient viafirmaClient = ViafirmaClientFactory.GetInstance();
             //Recuperamos el identificador de la firma
-            String signId = Request.Form["signId"];
+            //String signId = Request.Form["signId"];
 
-            // Instaciamos la clase encargada de añadir los parámetros
+            HttpPostedFile PostedFile = Request.Files["SignedFile"];
+
+           // Instaciamos la clase encargada de añadir los parámetros
             verificationSignatureRequest verificationSignatureRequest = VerifyUtil.newVerify();
 
             // Vamos añadiendo los parámetros al listado
 
             // SignatureStandard
-            String signatureStandardKey = VerifyParams.SIGNATURE_STANDARD_KEY;
-            String signatureStandardValue = VerifyParams.PADES_SIGNATURE_STANDARD;
+            string signatureStandardKey = VerifyParams.SIGNATURE_STANDARD_KEY;
+            //string signatureStandardValue = VerifyParams.PADES_SIGNATURE_STANDARD;
+            string signatureStandardValue = Request.Form["signatureStandard"];
             // Añadimos el parámetro SignatureStandard
             VerifyUtil.AddParameter(verificationSignatureRequest, signatureStandardKey, signatureStandardValue);
 
-            String filePath = "C:\\Users\\rquintero\\Downloads\\tragsa.pdf";
-            verificationSignatureRequest.signedDocument = File.ReadAllBytes(filePath);
-
             // TypeSign
-            String typeSignKey = VerifyParams.TYPE_SIGN_KEY;
-            String typeSignValue = VerifyParams.ATTACHED_TYPE_SIGN;
+            string typeSignKey = VerifyParams.TYPE_SIGN_KEY;
+            string typeSignValue = VerifyParams.ATTACHED_TYPE_SIGN;
             // Añadimos el parámetro TypeSign
             VerifyUtil.AddParameter(verificationSignatureRequest, typeSignKey, typeSignValue);
 
-            // Sign ID
-            //String signIdKey = VerifyParams.SIGNATURE_ID_KEY;
-            //String signIdValue = signId;
+            if (PostedFile != null && PostedFile.ContentLength > 0)
+            {
+                verificationSignatureRequest.signedDocument = new BinaryReader(PostedFile.InputStream).ReadBytes(PostedFile.ContentLength);
+            }
+
+            /* Sign ID
+            String signIdKey = VerifyParams.SIGNATURE_ID_KEY;
+            String signIdValue = signId;
             // Añadimos el parámetro TypeSign
-            //VerifyUtil.AddParameter(verificationSignatureRequest, signIdKey, signIdValue);
+            VerifyUtil.AddParameter(verificationSignatureRequest, signIdKey, signIdValue); */
 
             signatureVerification = viafirmaClient.verifySignature(verificationSignatureRequest);
 

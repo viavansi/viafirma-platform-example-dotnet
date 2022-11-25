@@ -69,7 +69,7 @@
                             <li><del><a href="utils/checkCertificate.aspx">Comprobación de validez de certificado cliente (clave pública)</a></del></li>
                             <li><del><a href="utils/checkCertificateByAlias.aspx">Comprobación de validez de certificado en el servidor</a></del></li>
                             <li><a href="utils/checkVerificateCert.aspx">Comprobación de validez de certificado cliente (clave pública)</a></li>
-                            <li><a href="utils/checkVerificateSign.aspx">Comprobar la validez de una firma</a></li>
+                            <li><a href="utils/checkVerificateSign.aspx">Validez de firma de un documento adjuntado</a></li>
                            <!-- <li><a href="getSignInfo.aspx">Recuperar información de una firma</a></li> -->
 						</ul>
 					</div>
