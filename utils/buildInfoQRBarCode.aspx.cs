@@ -34,7 +34,7 @@ namespace EjemploWebViafirmaClientDotNet.utils
             fs.Read(datos_a_firmar, 0, datos_a_firmar.Length);
             
             // Firmamos el documento en el servidor y nos devuelve el identificador de la firma.
-            string idFirma = clienteViafirma.signByServerWithTypeFileAndFormatSign("FicheroEjemploServer.xml", datos_a_firmar, Global.ALIAS, Global.PASS_CERT, typeFile.XML, typeFormatSign.XADES_EPES_ENVELOPED);
+            string idFirma = clienteViafirma.signByServerWithTypeFileAndFormatSign("FicheroEjemploServer.xml", datos_a_firmar, Global.ALIAS_CERT, Global.PASS_CERT, typeFile.XML, typeFormatSign.XADES_EPES_ENVELOPED);
             byte [] reciboQR = clienteViafirma.buildInfoQRBarCode(idFirma);
 
             System.IO.Stream stream = null;

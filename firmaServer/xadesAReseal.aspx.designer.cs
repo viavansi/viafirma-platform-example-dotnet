@@ -11,7 +11,7 @@ namespace EjemploWebViafirmaClientDotNet.firmaServer
 {
 
 
-    public partial class signatureXML
+    public partial class xadesAReseal
     {
 
         /// <summary>

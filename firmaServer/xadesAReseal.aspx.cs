@@ -1,58 +1,43 @@
 ﻿using System;
-using System.Collections;
-using System.Configuration;
-using System.Data;
-
-using System.Web;
-using System.Web.Security;
-using System.Web.UI;
-using System.Web.UI.HtmlControls;
-using System.Web.UI.WebControls;
-using System.Web.UI.WebControls.WebParts;
-
 using Viafirma;
 using System.IO;
-using System.Globalization;
+using System.Web;
 using System.Reflection;
 using ViafirmaClientDotNet.Helpers.Policy;
 
 namespace EjemploWebViafirmaClientDotNet.firmaServer
 {
-    public partial class signatureXML : System.Web.UI.Page
+    public partial class xadesAReseal : System.Web.UI.Page
     {
+
         public string idFirma;
+
         protected void Page_Load(object sender, EventArgs e)
         {
             idFirma = "";
         }
 
-        public void FirmarServerXMLButton_Click(object sender, EventArgs e)
+        public void XAdESAResealButton_Click(object sender, EventArgs e)
         {
             //Recuperamos la instancia del cliente
             ViafirmaClient clienteViafirma = ViafirmaClientFactory.GetInstance();
 
             // Recuperamos el documento a firmar.
             Assembly assembly = Assembly.GetExecutingAssembly();
-            Stream fs = assembly.GetManifestResourceStream(Global.DEMO_FILE_XML_PATH);
+            Stream fs = assembly.GetManifestResourceStream(Global.DEMO_FILE_TXT_PATH);
             byte[] datos_a_firmar = new byte[fs.Length];
             fs.Read(datos_a_firmar, 0, datos_a_firmar.Length);
-           
+
             // Enviamos a firmar el documento
-           
-            // En algunos casos, por ejemplo en el arranque de la aplicación puede ser interesante
-            // Comprobar que efectivamente el servidor de firma está disponible
-            System.Console.Write(clienteViafirma.ping("Prueba Conexión") + "\n");
-
-
             //Creamos el objeto documento con los datos a firmar
             documento doc = new documento();
-            doc.nombre = "prueba.xml";
+            doc.nombre = "ejemplo.txt";
             doc.datos = datos_a_firmar;
-            doc.typeFormatSign = typeFormatSign.XADES_EPES_ENVELOPED;
-            doc.tipo = typeFile.XML;
+            doc.typeFormatSign = typeFormatSign.XADES_XL_ENVELOPED;
+            doc.tipo = typeFile.TXT;
 
             //Creamos la politica de firma
-            policy pol = PolicyUtil.newPolicy(typeFormatSign.XADES_EPES_ENVELOPED, typeSign.ENVELOPED);
+            policy pol = PolicyUtil.newPolicy(typeFormatSign.XADES_XL_ENVELOPED, typeSign.ENVELOPED);
 
             // Enviamos a firmar el documento al servidor y nos devuelve el identificador de la firma.
             idFirma = clienteViafirma.SignByServerWithPolicy(pol, doc, Global.ALIAS_CERT, Global.PASS_CERT);
@@ -61,14 +46,22 @@ namespace EjemploWebViafirmaClientDotNet.firmaServer
             //Uri url = new Uri(HttpContext.Current.Request.Url, HttpContext.Current.Response.ApplyAppPathModifier("~/ResultadoFirmaServidor.aspx"));
             //Log.Debug("Redireccionado al usuario a: " + url);
 
+            // Upgrade previous signature to XAdES-A
+            documento toUpgrade = new documento();
+            toUpgrade.datos = clienteViafirma.getDocumentoCustodiado(idFirma);
+            toUpgrade.typeFormatSign = typeFormatSign.XADES_A_ENVELOPED;
+            toUpgrade.tipo = typeFile.XML;
+
+            idFirma = clienteViafirma.XadesAReseal(toUpgrade);
+
             // Guardamos el Id de Firma
             HttpContext.Current.Session["idFirma"] = idFirma;
-            
+
             // Redirecciona a la url
             //HttpContext.Current.Response.Redirect(url.AbsoluteUri);
         }
 
-    public void DownloadButton_Click(object sender, EventArgs e)
+        public void DownloadButton_Click(object sender, EventArgs e)
         {
             // The file path to download.
             // The file name used to save the file to the client's system..
@@ -85,7 +78,7 @@ namespace EjemploWebViafirmaClientDotNet.firmaServer
                 long bytesToRead = stream.Length;
                 Response.Clear();
                 Response.ContentType = "application/octet-stream";
-                Response.AddHeader("Content-Disposition", "attachment; filename=" + "Documento_firmado_servidor.xml");
+                Response.AddHeader("Content-Disposition", "attachment; filename=" + "XadesAResealed.xml");
                 Response.Buffer = true;
                 ((System.IO.MemoryStream)stream).WriteTo(Response.OutputStream);
                 stream.Flush();

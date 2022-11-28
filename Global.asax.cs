@@ -25,7 +25,7 @@ namespace EjemploWebViafirmaClientDotNet
 
         //Estos parametros se encuentran en el codigo únicamente por el ejemplo:
         //Alias del certificado instalado en servidor
-        public static string ALIAS = "xnoccio";
+        public static string ALIAS_CERT = "xnoccio";
         //Pass del certificado instalado en servidor
         public static string PASS_CERT = "12345";
 
@@ -46,7 +46,7 @@ namespace EjemploWebViafirmaClientDotNet
 
         protected void Application_Start(object sender, EventArgs e)
         {
-            int maxSize = 20;
+            int maxSize = 50;
             //ViafirmaClientFactory.Init(URL_VIAFIRMA, URL_WS_VIAFIRMA, "xnoccio", "12345", maxSize);
             //ViafirmaClientFactory.Init(URL_VIAFIRMA, URL_WS_VIAFIRMA, "dev_orbit", "YHTYBKTASGKHF0NC77NJC13F027RC", maxSize);
 

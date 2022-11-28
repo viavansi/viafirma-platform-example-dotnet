@@ -146,6 +146,7 @@
     <Content Include="firmaServer\signaturePDF.aspx" />
     <Content Include="firmaServer\signatureXML.aspx" />
     <Content Include="firmaPolicy\signatureWtihStamperAndImage.aspx" />
+    <Content Include="firmaServer\xadesAReseal.aspx" />
     <Content Include="firmaUser\signatureDigitalizedDesktop.aspx" />
     <Content Include="firmaUser\signatureDigitalized_01.aspx" />
     <Content Include="firmaUser\default.aspx" />
@@ -392,6 +393,13 @@
     </Compile>
     <Compile Include="firmaPolicy\signatureWtihStamperAndImage.aspx.designer.cs">
       <DependentUpon>signatureWtihStamperAndImage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="firmaServer\xadesAReseal.aspx.cs">
+      <DependentUpon>xadesAReseal.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="firmaServer\xadesAReseal.aspx.designer.cs">
+      <DependentUpon>xadesAReseal.aspx</DependentUpon>
     </Compile>
     <Compile Include="firmaUser\signatureDigitalizedDesktop.aspx.cs">
       <DependentUpon>signatureDigitalizedDesktop.aspx</DependentUpon>

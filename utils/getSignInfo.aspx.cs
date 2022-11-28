@@ -34,7 +34,7 @@ namespace EjemploWebViafirmaClientDotNet.utils
             fs.Read(datos_a_firmar, 0, datos_a_firmar.Length);
 
             // Enviamos a firmar el documento al servidor y nos devuelve el identificador de la firma.
-            String idFirma = clienteViafirma.signByServerWithTypeFileAndFormatSign("FicheroEjemploServer.xml", datos_a_firmar, Global.ALIAS, Global.PASS_CERT, typeFile.XML, typeFormatSign.XADES_EPES_ENVELOPED);
+            String idFirma = clienteViafirma.signByServerWithTypeFileAndFormatSign("FicheroEjemploServer.xml", datos_a_firmar, Global.ALIAS_CERT, Global.PASS_CERT, typeFile.XML, typeFormatSign.XADES_EPES_ENVELOPED);
             // Recuperamos el elemento firmado
             byte[] documento = clienteViafirma.getDocumentoCustodiado(idFirma);
             // Y comprobamos su validez
@@ -53,7 +53,7 @@ namespace EjemploWebViafirmaClientDotNet.utils
             fs.Read(datos_a_firmar, 0, datos_a_firmar.Length);
 
             // Enviamos a firmar el documento al servidor y nos devuelve el identificador de la firma.
-            String idFirma = clienteViafirma.signByServerWithTypeFileAndFormatSign("FicheroEjemploServer.pdf", datos_a_firmar, Global.ALIAS, Global.PASS_CERT, typeFile.PDF, typeFormatSign.PAdES_EPES);
+            String idFirma = clienteViafirma.signByServerWithTypeFileAndFormatSign("FicheroEjemploServer.pdf", datos_a_firmar, Global.ALIAS_CERT, Global.PASS_CERT, typeFile.PDF, typeFormatSign.PAdES_EPES);
             byte[] firmado1 = clienteViafirma.getDocumentoCustodiado(idFirma);
             //String idFirma2 = clienteViafirma.signByServerWithTypeFileAndFormatSign("FicheroEjemploServer.pdf", firmado1, Global.ALIAS, Global.PASS_CERT, typeFile.PDF, typeFormatSign.PAdES_EPES);
             //byte[] firmado2 = clienteViafirma.getDocumentoCustodiado(idFirma2);

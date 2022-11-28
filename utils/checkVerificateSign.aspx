@@ -69,11 +69,10 @@
                             count++;
                 %>
                     <div class="box">
-					    <h2 class="box-title">Firma <%=count%></h2> 
+					    <h2 class="box-title">Firma <%=count%> - <%=signatureVerify.signatureStatus%></h2> 
 					    <div class="box-content">
-						    <p>Estado: <%=signatureVerify.signatureStatus%><br/></p>
-                            <p>Mensaje: <%=signatureVerify.message%><br/></p>
-                            <p>Fecha de firma: <%=signatureVerify.signTimeStamp%><br/></p>
+						    <p><strong>Estado: </strong><%=signatureVerify.signatureStatus%><br/></p>
+                            <p><strong>Fecha de firma:</strong> <%=signatureVerify.signTimeStamp%><br/></p>
 				        </div>
 
 						<div class="box-content">
@@ -102,7 +101,7 @@
 								<strong>Mensaje: </strong><%=signatureVerify.certificateResponseList[0].message%>
 							</p>
 							<p>
-								<strong>Estado: </strong><%=signatureVerify.certificateResponseList[0].certificateStatus%>
+								<strong>Estado del certificado: </strong><%=signatureVerify.certificateResponseList[0].certificateStatus%>
 							</p>
 								
 						</div>

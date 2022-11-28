@@ -69,7 +69,7 @@ namespace EjemploWebViafirmaClientDotNet.firmaServer
             PolicyUtil.AddParameter(pol, PolicyParams.DIGITAL_SIGN_STAMPER_TEXT, "Prueba Firmado por [CN]\ncon DNI [SERIALNUMBER]\ntrabajador de [O]\nen el departamento de [OU]");
             PolicyUtil.AddParameter(pol, PolicyParams.DIGITAL_SIGN_STAMPER_HIDE_STATUS, "true");
 
-            idFirma = clienteViafirma.SignByServerWithPolicy(pol,doc, Global.ALIAS, Global.PASS_CERT);
+            idFirma = clienteViafirma.SignByServerWithPolicy(pol,doc, Global.ALIAS_CERT, Global.PASS_CERT);
 
 
 
@@ -131,7 +131,7 @@ namespace EjemploWebViafirmaClientDotNet.firmaServer
             //Creamos la politica de firma
             policy pol = PolicyUtil.newPolicy(typeFormatSign.PDF_PKCS7_T, typeSign.ENVELOPED);
 
-            idFirma = clienteViafirma.SignByServerWithPolicy(pol, doc, Global.ALIAS, Global.PASS_CERT);
+            idFirma = clienteViafirma.SignByServerWithPolicy(pol, doc, Global.ALIAS_CERT, Global.PASS_CERT);
 
             // Generamos la url a la página que gestiona la comunicación con Viafirma.
             // Uri url = new Uri(HttpContext.Current.Request.Url, HttpContext.Current.Response.ApplyAppPathModifier("~/ResultadoFirmaServidor.aspx"));

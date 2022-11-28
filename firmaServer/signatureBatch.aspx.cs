@@ -50,7 +50,7 @@ namespace EjemploWebViafirmaClientDotNet.firmaServer
             clienteViafirma.addDocumentoFirmaEnLote(idLote, "DocumentoEjemplo2.PDF", typeFile.PDF, datos_a_firmar);
 
            // Enviamos a firmar el lote de documentos al servidor y obtenemos el identificador final de la firma.
-           idFirma = clienteViafirma.signByServerEnLotes(idLote,Global.ALIAS, Global.PASS_CERT);
+           idFirma = clienteViafirma.signByServerEnLotes(idLote,Global.ALIAS_CERT, Global.PASS_CERT);
             
             // Generamos la url a la página que gestiona la comunicación con Viafirma.
             // Uri url = new Uri(HttpContext.Current.Request.Url, HttpContext.Current.Response.ApplyAppPathModifier("~/ResultadoFirmaServidor.aspx"));

@@ -28,6 +28,7 @@
 									<li><a href="signaturePDF.aspx">Firmar documento PDF en formato PDF Signature</a></li>
                                     <li><a href="signaturePDFImage.aspx">Firmar documento PDF en formato PDF Signature e incluyendo una imagen como sello de firma</a></li>
 									<li><a href="signatureXML.aspx">Firmar documento XML en formato XAdES</a></li>
+									<li><a href="xadesAReseal.aspx">Promoción a XAdES-A de un documento previamente firmado</a></li>
 								</ul>
 							</div>
 						</div>

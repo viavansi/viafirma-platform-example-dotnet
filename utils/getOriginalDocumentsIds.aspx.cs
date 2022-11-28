@@ -52,7 +52,7 @@ namespace EjemploWebViafirmaClientDotNet.utils
             clienteViafirma.addDocumentoFirmaEnLote(idLote, "LoteEjemplo3.txt", typeFile.TXT, datos_a_firmarTXT);
 
             // Y enviamos a firmar el lote de documentos al servidor y obtenemos el identificador final de la firma.
-            string id = clienteViafirma.signByServerEnLotes(idLote, Global.ALIAS, Global.PASS_CERT);
+            string id = clienteViafirma.signByServerEnLotes(idLote, Global.ALIAS_CERT, Global.PASS_CERT);
 
             string[] listadoIds = clienteViafirma.getOriginalDocumentIds(id);
             docuList = new List<documento>();

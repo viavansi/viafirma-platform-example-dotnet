@@ -38,7 +38,7 @@ namespace EjemploWebViafirmaClientDotNet.utils
             fs.Read(datos_a_firmar, 0, datos_a_firmar.Length);
 
             // Enviamos a firmar el documento al servidor y obtenemos el identificador final de la firma.
-            idFirma = clienteViafirma.signByServerWithTypeFileAndFormatSign("FicheroEjemploServer.xml", datos_a_firmar, Global.ALIAS, Global.PASS_CERT, typeFile.XML, typeFormatSign.XADES_EPES_ENVELOPED);
+            idFirma = clienteViafirma.signByServerWithTypeFileAndFormatSign("FicheroEjemploServer.xml", datos_a_firmar, Global.ALIAS_CERT, Global.PASS_CERT, typeFile.XML, typeFormatSign.XADES_EPES_ENVELOPED);
             Session.Add("id", idFirma);
         }
 

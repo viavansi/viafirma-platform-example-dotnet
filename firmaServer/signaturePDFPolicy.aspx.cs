@@ -85,7 +85,7 @@ namespace EjemploWebViafirmaClientDotNet.firmaServer
             //Creamos la politica de firma
             policy pol = PolicyUtil.newPolicy(typeFormatSign.PAdES_LTV, typeSign.ATTACHED);
 
-            idFirma = clienteViafirma.SignByServerWithPolicy(pol,doc, Global.ALIAS, Global.PASS_CERT);
+            idFirma = clienteViafirma.SignByServerWithPolicy(pol,doc, Global.ALIAS_CERT, Global.PASS_CERT);
 
             // Generamos la url a la página que gestiona la comunicación con Viafirma.
             // Uri url = new Uri(HttpContext.Current.Request.Url, HttpContext.Current.Response.ApplyAppPathModifier("~/ResultadoFirmaServidor.aspx"));
@@ -117,7 +117,7 @@ namespace EjemploWebViafirmaClientDotNet.firmaServer
             System.Console.Write(clienteViafirma.ping("Prueba Conexión") + "\n");
 
             // Enviamos a firmar el documento al servidor y obtenemos el identificador final de la firma.
-            idFirma = clienteViafirma.signByServerWithTypeFileAndFormatSign("FicheroEjemploServer.pdf", datos_a_firmar, Global.ALIAS, Global.PASS_CERT, typeFile.PDF, typeFormatSign.PDF_PKCS7_T);
+            idFirma = clienteViafirma.signByServerWithTypeFileAndFormatSign("FicheroEjemploServer.pdf", datos_a_firmar, Global.ALIAS_CERT, Global.PASS_CERT, typeFile.PDF, typeFormatSign.PDF_PKCS7_T);
 
             // Generamos la url a la página que gestiona la comunicación con Viafirma.
             // Uri url = new Uri(HttpContext.Current.Request.Url, HttpContext.Current.Response.ApplyAppPathModifier("~/ResultadoFirmaServidor.aspx"));

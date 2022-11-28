@@ -39,7 +39,7 @@ namespace EjemploWebViafirmaClientDotNet.utils
             fs.Read(datos_a_firmar, 0, datos_a_firmar.Length);
 
             // Enviamos a firmar el documento al servidor y nos devuelve el identificador de la firma.
-            idFirma = clienteViafirma.signByServerWithTypeFileAndFormatSign("FicheroEjemploServer.pdf", datos_a_firmar, Global.ALIAS, Global.PASS_CERT, typeFile.PDF, typeFormatSign.PDF_PKCS7);
+            idFirma = clienteViafirma.signByServerWithTypeFileAndFormatSign("FicheroEjemploServer.pdf", datos_a_firmar, Global.ALIAS_CERT, Global.PASS_CERT, typeFile.PDF, typeFormatSign.PDF_PKCS7);
             // Recuperamos el elemento firmado
             byte[] documentoFirmado = clienteViafirma.getDocumentoCustodiado(idFirma);
             // Y comprobamos su validez
@@ -57,7 +57,7 @@ namespace EjemploWebViafirmaClientDotNet.utils
             fs.Read(datos_a_firmar, 0, datos_a_firmar.Length);
 
             // Enviamos a firmar el documento al servidor y nos devuelve el identificador de la firma.
-            idFirma = clienteViafirma.signByServerWithTypeFileAndFormatSign("FicheroEjemploServer.pdf", datos_a_firmar, Global.ALIAS, Global.PASS_CERT, typeFile.PDF, typeFormatSign.PDF_PKCS7);
+            idFirma = clienteViafirma.signByServerWithTypeFileAndFormatSign("FicheroEjemploServer.pdf", datos_a_firmar, Global.ALIAS_CERT, Global.PASS_CERT, typeFile.PDF, typeFormatSign.PDF_PKCS7);
 
             
             // Y comprobamos el documento original que no esta firmado para forzar q no sea valido.

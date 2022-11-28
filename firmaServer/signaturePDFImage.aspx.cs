@@ -72,7 +72,7 @@ namespace EjemploWebViafirmaClientDotNet.firmaServer
             PolicyUtil.AddParameter(pol, PolicyParams.DIGITAL_SIGN_IMAGE_STAMPER, imageB64);
 
             // Enviamos a firmar el documento al servidor y obtenemos el identificador final de la firma.
-            idFirma = clienteViafirma.SignByServerWithPolicy(pol, doc, Global.ALIAS, Global.PASS_CERT);
+            idFirma = clienteViafirma.SignByServerWithPolicy(pol, doc, Global.ALIAS_CERT, Global.PASS_CERT);
 
             // Generamos la url a la página que gestiona la comunicación con Viafirma.
             // Uri url = new Uri(HttpContext.Current.Request.Url, HttpContext.Current.Response.ApplyAppPathModifier("~/ResultadoFirmaServidor.aspx"));
