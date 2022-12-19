@@ -42,7 +42,7 @@ namespace EjemploWebViafirmaClientDotNet
             PolicyUtil.AddParameter(pol, PolicyParams.DIGITAL_SIGN_PAGE, "1");
             PolicyUtil.AddParameter(pol, PolicyParams.DIGITAL_SIGN_RECTANGLE, PolicyUtil.rectangleToJson(r));
             PolicyUtil.AddParameter(pol, PolicyParams.DIGITAL_SIGN_STAMPER_HIDE_STATUS, "true");
-            PolicyUtil.AddParameter(pol, PolicyParams.DIGITAL_SIGN_STAMPER_TEXT, "Firmado por [CN] con DNI [SERIALNUMBER]\ntrabajador de [O] en el departamento de [OU]");
+            PolicyUtil.AddParameter(pol, PolicyParams.DIGITAL_SIGN_STAMPER_TEXT, "Firmado por [CN] con DNI [NIF]\ntrabajador de [O] en el departamento de [OU]");
             PolicyUtil.AddParameter(pol, PolicyParams.DIGITAL_SIGN_STAMPER_TYPE, "QR-BAR-H");
             PolicyUtil.AddParameter(pol, PolicyParams.DIGITAL_SIGN_STAMPER_ROTATION_ANGLE, "90");
 
