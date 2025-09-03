@@ -73,6 +73,7 @@
 					    <div class="box-content">
 						    <p><strong>Estado: </strong><%=signatureVerify.signatureStatus%><br/></p>
                             <p><strong>Fecha de firma:</strong> <%=signatureVerify.signTimeStamp%><br/></p>
+							<p><strong>Mensaje:</strong> <%=signatureVerify.message%><br/></p>
 				        </div>
 
 						<div class="box-content">
@@ -103,7 +104,8 @@
 							<p>
 								<strong>Estado del certificado: </strong><%=signatureVerify.certificateResponseList[0].certificateStatus%>
 							</p>
-								
+							
+
 						</div>
                     </div>
 				

@@ -1,14 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Web;
-using System.Web.UI;
-using System.Web.UI.WebControls;
 
 using System.IO;
 using Viafirma;
-using System.Reflection;
-using System.Text;
 using ViafirmaClientDotNet.Helpers.Verify;
 
 namespace EjemploWebViafirmaClientDotNet.utils

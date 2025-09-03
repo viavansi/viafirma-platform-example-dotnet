@@ -79,9 +79,7 @@
 							<h3 class="box-title">Metodos utilizados</h3>
 							<div class="box-content">
 								<ul>
-									<li>signByServerWithTypeFileAndFormatSign</li>
-									<li>getDocumentoCustodiado</li>
-									<li>checkSignedDocumentValidityByFileType</li>
+									<li>verifySignature</li>
 								</ul>
 							</div>
 						</div>

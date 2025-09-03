@@ -43,11 +43,20 @@
 
 				                    <li><a href="firmaServer/default.aspx" 
                                             title="Firmar un documento sin intervencion del usuario">Firmar un documento sin intervencion del usuario</a></li>
+
+									<li><a href="#" >Firmar invocando a Viafirma Desktop por protocolo</a></li>
+										<ul>
+											<li><a href="signatureDirectViafirmaDesktop.aspx" title="Firmar invocando a Viafirma Desktop por protocolo (vía SDK)">Firmar invocando a Viafirma Desktop por protocolo (vía SDK)</a></li>
+											<li><a href="firmaViafirmaDesktop.aspx" >Firmar invocando a Viafirma Desktop por protocolo (vía API REST)</a></li>
+										</ul>
+
+									<li><a href="#" >Firmar varios documentos en bucle invocando a Viafirma Desktop por protocolo</a></li>
+										<ul>
+											<li><a href="signatureDirectViafirmaDesktopParallel.aspx" title="Firmar varios documentos en bucle, invocando a Viafirma Desktop por protocolo (vía SDK) (requiere Javascript)">Firmar varios documentos en bucle, invocando a Viafirma Desktop por protocolo (vía SDK)</a></li>
+										</ul>
                                     
-                                    <li><a href="firmaPolicy/default.aspx" 
-                                            title="Otros ejemplos de firma">Otros ejemplos de firma</a></li>
-                                    <li><a href="signatureDirectViafirmaDesktop.aspx" title="Firmar invocando a Viafirma Desktop por protocolo">Firmar invocando a Viafirma Desktop por protocolo</a></li>                     
-									<li><a href="signatureDirectViafirmaDesktopParallel.aspx" title="Firmar varios documentos en bucle, invocando a Viafirma Desktop por protocolo">Firmar varios documentos en bucle, invocando a Viafirma Desktop por protocolo</a></li>
+                                    <li><a href="firmaPolicy/default.aspx" title="Otros ejemplos de firma">Otros ejemplos de firma</a></li>
+                                    
 			                    </ul>
 							</div>
 						</div>

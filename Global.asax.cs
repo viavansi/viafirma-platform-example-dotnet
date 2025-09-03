@@ -1,10 +1,4 @@
 ﻿using System;
-using System.Collections;
-using System.Configuration;
-using System.Data;
-using System.Net;
-using System.Web;
-using System.Web.Security;
 using System.Web.SessionState;
 using Viafirma;
 
@@ -15,13 +9,19 @@ namespace EjemploWebViafirmaClientDotNet
 
 
 
-        // URL en la que se encuentra el servidor de Viafirma Utilizado. 
-        public static string URL_VIAFIRMA = "https://testservices.viafirma.com/viafirma/tokenConnector";
+        // URL en la que se encuentra el servidor de Viafirma Utilizado.
+        //public static string URL_VIAFIRMA = "https://services.viafirma.com/viafirma/tokenConnector";
+        public static string URL_VIAFIRMA = "https://sandbox-platform.viafirma.com/platform/tokenConnector";
         //public static string URL_VIAFIRMA = "https://ci.viafirma.com/platform/tokenConnector";
+        //public static string URL_VIAFIRMA = "https://rquintero.viavansi.com/viafirma/tokenConnector";
+        //public static string URL_VIAFIRMA = "https://firmades.sergas.es/firmaPlatform/tokenConnector";
 
         // URL en la que se encuentra el WS del servidor de Viafirma Utilizado.
-        public static string URL_WS_VIAFIRMA = "https://testservices.viafirma.com/viafirma";
+        //public static string URL_WS_VIAFIRMA = "https://services.viafirma.com/viafirma";
+        public static string URL_WS_VIAFIRMA = "https://sandbox-platform.viafirma.com/platform";
         //public static string URL_WS_VIAFIRMA = "https://ci.viafirma.com/platform/viafirma";
+        //public static string URL_WS_VIAFIRMA = "https://rquintero.viavansi.com/viafirma";
+        //public static string URL_WS_VIAFIRMA = "https://firmades.sergas.es/firmaPlatform";
 
         //Estos parametros se encuentran en el codigo únicamente por el ejemplo:
         //Alias del certificado instalado en servidor
@@ -30,8 +30,10 @@ namespace EjemploWebViafirmaClientDotNet
         public static string PASS_CERT = "12345";
 
         public static string API_KEY = "xnoccio";
+        //public static string API_KEY = "FIRMATESTDES";
 
         public static string PASS_KEY = "12345";
+        //public static string PASS_KEY = "1WKKTLQ9.";
 
         public static String DEMO_FILE_PDF_PATH { get; set; }
         public static String DEMO_P12_PATH { get; set; }
@@ -77,10 +79,11 @@ namespace EjemploWebViafirmaClientDotNet
 
             string appPath = Environment.CurrentDirectory;
             DEMO_FILE_PDF_PATH = "EjemploWebViafirmaClientDotNet.resources.exampleSign.pdf";
-            DEMO_P12_PATH = "EjemploWebViafirmaClientDotNet.resources.xnoccio.p12";
+            //DEMO_P12_PATH = "EjemploWebViafirmaClientDotNet.resources.xnoccio.p12";
+            DEMO_P12_PATH = "EjemploWebViafirmaClientDotNet.resources.cer.pfx";
             DEMO_FILE_PDF_PATH_10_PAGS = "EjemploWebViafirmaClientDotNet.resources.Loremipsum_10_pags.pdf";
             DEMO_FILE_PDF_PATH_10_PAGS_SIGNED = "EjemploWebViafirmaClientDotNet.resources.10_pag_firmado.pdf";
-            DEMO_FILE_XML_PATH = "EjemploWebViafirmaClientDotNet.resources.prueba.xml";
+            DEMO_FILE_XML_PATH = "EjemploWebViafirmaClientDotNet.resources.absis.xml";
             DEMO_FILE_TXT_PATH = "EjemploWebViafirmaClientDotNet.resources.ejemplo.txt";
             DEMO_IMAGE_LOGO_PATH = "EjemploWebViafirmaClientDotNet.resources.viafirma-400x400.png";
             DEMO_STAMPER_PATH = "EjemploWebViafirmaClientDotNet.resources.stamperWatermark.png";

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<test:level1
+	xmlns:test="http://test/level" >
+  <test:level20 ID="L20">El veloz murciélago hindú comía feliz cardillo y kiwi. La cigüeña tocaba el saxofón detrás del palenque de paja.</test:level20>
+  <test:level21 ID="L21">
+    <test:level3 ID="L3">
+    </test:level3>
+  </test:level21>
+</test:level1>
