@@ -37,12 +37,11 @@
             Response.AddHeader("Content-Disposition", "attachment; filename=" + "documento" + Session["extension"]);
             Response.Buffer = true;
             ((System.IO.MemoryStream)stream).WriteTo(Response.OutputStream);
-            Response.End();
         }
         catch (Exception ex)
         {
             Response.Write(ex.Message);
-            // An error occurred.. 
+            // An error occurred..
         }
         finally
         {
@@ -50,6 +49,7 @@
             {
                 stream.Close();
             }
+            Response.End();
         }
     }
 </script>

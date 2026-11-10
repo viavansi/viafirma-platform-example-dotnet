@@ -63,7 +63,7 @@ namespace EjemploWebViafirmaClientDotNet.firmaServer
             doc.tipo = typeFile.PDF;
 
             //Creamos la politica de firma
-            policy pol = PolicyUtil.newPolicy(typeFormatSign.PDF_PKCS7, typeSign.ENVELOPED);
+            policy pol = PolicyUtil.newPolicy(typeFormatSign.PAdES_BASIC, typeSign.ENVELOPED);
 
             PolicyUtil.AddParameter(pol, PolicyParams.DIGITAL_SIGN_PAGE, "1");
             //creamos el rectangle
@@ -107,7 +107,6 @@ namespace EjemploWebViafirmaClientDotNet.firmaServer
                 Response.AddHeader("Content-Disposition", "attachment; filename=" + "Documento_firmado_servidor.pdf");
                 Response.Buffer = true;
                 ((System.IO.MemoryStream)stream).WriteTo(Response.OutputStream);
-                Response.End();
             }
             catch (Exception ex)
             {

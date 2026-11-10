@@ -80,12 +80,14 @@ namespace EjemploWebViafirmaClientDotNet.firmaUser
                 doc.tipo = typeFile.hash;
 
                 //Creamos la politica de firma
-                policy pol = PolicyUtil.newPolicy(typeFormatSign.CAdES_EPES, typeSign.ENVELOPED);
+                policy pol = PolicyUtil.newPolicy(typeFormatSign.CAdES_EPES, typeSign.DETACHED);
 
 
                 // Registramos el documento que deseamos firmar. Obteniendo un identificador temporal.
                 // Este identificador temporal no es necesario que sea almacenado ya que sólo tiene validez durante el proceso de firma.
                 idFirma = clienteViafirma.PrepareSignWithPolicy(pol, doc);
+
+                Session["extension"] = ".p7s";
 
                 clienteViafirma.Sign(idFirma);
             }
