@@ -19,7 +19,7 @@ namespace EjemploWebViafirmaClientDotNet.firmaClient
             signId = "";
         }
 
-     /*   public void signByClient(object sender, EventArgs e)
+        public void signByClient(object sender, EventArgs e)
         {
             //Recuperamos la instancia del cliente
             ViafirmaClient clienteViafirma = ViafirmaClientFactory.GetInstance();
@@ -32,7 +32,7 @@ namespace EjemploWebViafirmaClientDotNet.firmaClient
 
             //Obtengo el certificado con el cual voy a firmar
             Stream certificate = assembly.GetManifestResourceStream(Global.DEMO_P12_PATH);
-            String certificatePass = "absis";
+            String certificatePass = "1234";
 
 
             // Enviamos a firmar el documento
@@ -41,7 +41,7 @@ namespace EjemploWebViafirmaClientDotNet.firmaClient
             documento doc = new documento();
             doc.nombre = "clientSigned.pdf";
             doc.datos = datos_a_firmar;
-            doc.typeFormatSign = typeFormatSign.PAdES_BASIC;
+            doc.typeFormatSign = typeFormatSign.PAdES_BES;
             doc.tipo = typeFile.PDF;
 
             // En algunos casos, por ejemplo en el arranque de la aplicación puede ser interesante
@@ -49,12 +49,12 @@ namespace EjemploWebViafirmaClientDotNet.firmaClient
             System.Console.Write(clienteViafirma.ping("Prueba Conexión") + "\n");
 
             //Creamos la politica de firma
-            policy pol = PolicyUtil.newPolicy(typeFormatSign.PAdES_BASIC, typeSign.ATTACHED);
+            policy pol = PolicyUtil.newPolicy(typeFormatSign.PAdES_BES, typeSign.ATTACHED);
 
            //pol.previousTypeFormatSign = typeFormatSign.PAdES_BASIC;
 
-            PolicyUtil.AddParameter(pol, PolicyParams.SIGNATURE_ALGORITHM, "SHA1withRSA");
-            PolicyUtil.AddParameter(pol, PolicyParams.DIGEST_METHOD, "SHA1");
+            //PolicyUtil.AddParameter(pol, PolicyParams.SIGNATURE_ALGORITHM, "SHA512withRSA");
+            //PolicyUtil.AddParameter(pol, PolicyParams.DIGEST_METHOD, "SHA512");
 
             //Logica del ejemplo para descagar el fichero con la extension correcta
             Session["extension"] = ".pdf";
@@ -64,9 +64,9 @@ namespace EjemploWebViafirmaClientDotNet.firmaClient
 
             // Guardamos el Id de Firma
             HttpContext.Current.Session["signId"] = signId;
-        }*/
+        }
 
-        public void signByClient(object sender, EventArgs e)
+       /* public void signByClient(object sender, EventArgs e)
         {
             //Recuperamos la instancia del cliente
             ViafirmaClient clienteViafirma = ViafirmaClientFactory.GetInstance();
@@ -98,12 +98,11 @@ namespace EjemploWebViafirmaClientDotNet.firmaClient
             //Creamos la politica de firma
             policy pol = PolicyUtil.newPolicy(typeFormatSign.XADES_T_ENVELOPED, typeSign.ENVELOPED);
 
-
             PolicyUtil.AddParameter(pol, PolicyParams.NODE_ID_TO_SIGN, "EXP_INDICE_CONTENIDOES_L09899999_2022_EXP_000000000000000000000005151220");
             PolicyUtil.AddParameter(pol, PolicyParams.ENVELOPED_TARGET_NODE, "/*[local-name()='expediente']/*[local-name()='indice']/*[local-name()='firmas']/*[local-name()='firma']/*[local-name()='ContenidoFirma']/*[local-name()='FirmaConCertificado']");
 
-            //PolicyUtil.AddParameter(pol, PolicyParams.SIGNATURE_ALGORITHM, "SHA256withRSA");
-            //PolicyUtil.AddParameter(pol, PolicyParams.DIGEST_METHOD, "SHA256");
+            //PolicyUtil.AddParameter(pol, PolicyParams.SIGNATURE_ALGORITHM, "SHA512withRSA");
+            //PolicyUtil.AddParameter(pol, PolicyParams.DIGEST_METHOD, "SHA512");
 
             //Logica del ejemplo para descagar el fichero con la extension correcta
             Session["extension"] = ".xml";
@@ -113,7 +112,7 @@ namespace EjemploWebViafirmaClientDotNet.firmaClient
 
             // Guardamos el Id de Firma
             HttpContext.Current.Session["signId"] = signId;
-        }
+        } */
 
         public void DownloadButton_Click(object sender, EventArgs e)
         {
@@ -132,7 +131,7 @@ namespace EjemploWebViafirmaClientDotNet.firmaClient
                 long bytesToRead = stream.Length;
                 Response.Clear();
                 Response.ContentType = "application/octet-stream";
-                Response.AddHeader("Content-Disposition", "attachment; filename=" + "Documento_firmado_servidor.xml");
+                Response.AddHeader("Content-Disposition", "attachment; filename=" + "Documento_firmado" + Session["extension"]);
                 Response.Buffer = true;
                 ((System.IO.MemoryStream)stream).WriteTo(Response.OutputStream);
             }
