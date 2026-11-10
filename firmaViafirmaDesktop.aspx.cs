@@ -1,6 +1,5 @@
 ﻿using System;
 using RestSharp;
-using System;
 using System.Text.Json;
 using System.Text.Json.Nodes;
 
@@ -24,11 +23,11 @@ namespace EjemploWebViafirmaClientDotNet
              var response = client.SendAsync(request);
              response.EnsureSuccessStatusCode();
              Console.WriteLine(response.Content.ReadAsStringAsync());*/
-            string baseURL = "https://sandbox.viafirma.com/platform";
+            string baseURL = "https://sandbox-platform.viafirma.com/platform";
             //string baseURL = "https://firmades.sergas.es/firmaPlatform";
             var options = new RestClientOptions(baseURL)
             {
-                MaxTimeout = -1,
+                Timeout = System.Threading.Timeout.InfiniteTimeSpan,
             };
             var client = new RestClient(options);
             string restURL = "/api/rest/services/signature";

@@ -33,11 +33,9 @@ namespace EjemploWebViafirmaClientDotNet.firmaServer
 
             // Recuperamos el documento a firmar.
             Assembly assembly = Assembly.GetExecutingAssembly();
-            //Stream fs = assembly.GetManifestResourceStream(Global.DEMO_FILE_PDF_PATH);
-            //byte[] datos_a_firmar = new byte[fs.Length];
-            //fs.Read(datos_a_firmar, 0, datos_a_firmar.Length);
-
-            byte[] datos_a_firmar = File.ReadAllBytes("C:\\Users\\ruben\\Downloads\\20200330_Firma_Portafirmas-Externos.pdf");
+            Stream fs = assembly.GetManifestResourceStream(Global.DEMO_FILE_PDF_PATH);
+            byte[] datos_a_firmar = new byte[fs.Length];
+            fs.Read(datos_a_firmar, 0, datos_a_firmar.Length);
 
 
             // En algunos casos, por ejemplo en el arranque de la aplicación puede ser interesante
@@ -164,7 +162,6 @@ namespace EjemploWebViafirmaClientDotNet.firmaServer
                 Response.AddHeader("Content-Disposition", "attachment; filename=" + "Documento_firmado_servidor.pdf");
                 Response.Buffer = true;
                 ((System.IO.MemoryStream)stream).WriteTo(Response.OutputStream);
-                Response.End();
             }
             catch (Exception ex)
             {

@@ -79,7 +79,7 @@ namespace EjemploWebViafirmaClientDotNet.firmaClient
 
             //Obtengo el certificado con el cual voy a firmar
             Stream certificate = assembly.GetManifestResourceStream(Global.DEMO_P12_PATH);
-            String certificatePass = "absis";
+            String certificatePass = "1234";
 
 
             // Enviamos a firmar el documento
@@ -102,8 +102,8 @@ namespace EjemploWebViafirmaClientDotNet.firmaClient
             PolicyUtil.AddParameter(pol, PolicyParams.NODE_ID_TO_SIGN, "EXP_INDICE_CONTENIDOES_L09899999_2022_EXP_000000000000000000000005151220");
             PolicyUtil.AddParameter(pol, PolicyParams.ENVELOPED_TARGET_NODE, "/*[local-name()='expediente']/*[local-name()='indice']/*[local-name()='firmas']/*[local-name()='firma']/*[local-name()='ContenidoFirma']/*[local-name()='FirmaConCertificado']");
 
-            PolicyUtil.AddParameter(pol, PolicyParams.SIGNATURE_ALGORITHM, "SHA1withRSA");
-            PolicyUtil.AddParameter(pol, PolicyParams.DIGEST_METHOD, "SHA1");
+            //PolicyUtil.AddParameter(pol, PolicyParams.SIGNATURE_ALGORITHM, "SHA256withRSA");
+            //PolicyUtil.AddParameter(pol, PolicyParams.DIGEST_METHOD, "SHA256");
 
             //Logica del ejemplo para descagar el fichero con la extension correcta
             Session["extension"] = ".xml";
@@ -135,7 +135,6 @@ namespace EjemploWebViafirmaClientDotNet.firmaClient
                 Response.AddHeader("Content-Disposition", "attachment; filename=" + "Documento_firmado_servidor.xml");
                 Response.Buffer = true;
                 ((System.IO.MemoryStream)stream).WriteTo(Response.OutputStream);
-                Response.End();
             }
             catch (Exception ex)
             {

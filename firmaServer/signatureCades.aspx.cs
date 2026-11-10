@@ -144,7 +144,6 @@ namespace EjemploWebViafirmaClientDotNet.firmaServer
                 Response.AddHeader("Content-Disposition", "attachment; filename=" + "Documento_firmado_servidor.pdf");
                 Response.Buffer = true;
                 ((System.IO.MemoryStream)stream).WriteTo(Response.OutputStream);
-                Response.End();
             }
             catch (Exception ex)
             {

@@ -58,11 +58,11 @@ namespace EjemploWebViafirmaClientDotNet.firmaUser
             documento doc = new documento();
             doc.nombre = "FicheroEjemplo.pdf";
             doc.datos = datos_a_firmar;
-            doc.typeFormatSign = typeFormatSign.PDF_PKCS7;
+            doc.typeFormatSign = typeFormatSign.PAdES_BASIC;
             doc.tipo = typeFile.PDF;
 
             //Creamos la politica de firma
-            policy pol = PolicyUtil.newPolicy(typeFormatSign.PDF_PKCS7, typeSign.ENVELOPED);
+            policy pol = PolicyUtil.newPolicy(typeFormatSign.PAdES_BASIC, typeSign.ENVELOPED);
 
             PolicyUtil.AddParameter(pol, PolicyParams.DIGITAL_SIGN_PAGE, "1");
             //creamos el rectangle

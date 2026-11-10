@@ -11,23 +11,23 @@ namespace EjemploWebViafirmaClientDotNet
 
         // URL en la que se encuentra el servidor de Viafirma Utilizado.
         //public static string URL_VIAFIRMA = "https://services.viafirma.com/viafirma/tokenConnector";
-        public static string URL_VIAFIRMA = "https://sandbox-platform.viafirma.com/platform/tokenConnector";
+        //public static string URL_VIAFIRMA = "https://sandbox-platform.viafirma.com/platform/tokenConnector";
         //public static string URL_VIAFIRMA = "https://ci.viafirma.com/platform/tokenConnector";
-        //public static string URL_VIAFIRMA = "https://rquintero.viavansi.com/viafirma/tokenConnector";
+        public static string URL_VIAFIRMA = "https://rquintero.viavansi.com/viafirma/tokenConnector";
         //public static string URL_VIAFIRMA = "https://firmades.sergas.es/firmaPlatform/tokenConnector";
 
         // URL en la que se encuentra el WS del servidor de Viafirma Utilizado.
         //public static string URL_WS_VIAFIRMA = "https://services.viafirma.com/viafirma";
-        public static string URL_WS_VIAFIRMA = "https://sandbox-platform.viafirma.com/platform";
+        //public static string URL_WS_VIAFIRMA = "https://sandbox-platform.viafirma.com/platform";
         //public static string URL_WS_VIAFIRMA = "https://ci.viafirma.com/platform/viafirma";
-        //public static string URL_WS_VIAFIRMA = "https://rquintero.viavansi.com/viafirma";
+        public static string URL_WS_VIAFIRMA = "https://rquintero.viavansi.com/viafirma";
         //public static string URL_WS_VIAFIRMA = "https://firmades.sergas.es/firmaPlatform";
 
         //Estos parametros se encuentran en el codigo únicamente por el ejemplo:
         //Alias del certificado instalado en servidor
-        public static string ALIAS_CERT = "xnoccio";
+        public static string ALIAS_CERT = "ecc_fp";
         //Pass del certificado instalado en servidor
-        public static string PASS_CERT = "12345";
+        public static string PASS_CERT = "1234";
 
         public static string API_KEY = "xnoccio";
         //public static string API_KEY = "FIRMATESTDES";
@@ -80,7 +80,7 @@ namespace EjemploWebViafirmaClientDotNet
             string appPath = Environment.CurrentDirectory;
             DEMO_FILE_PDF_PATH = "EjemploWebViafirmaClientDotNet.resources.exampleSign.pdf";
             //DEMO_P12_PATH = "EjemploWebViafirmaClientDotNet.resources.xnoccio.p12";
-            DEMO_P12_PATH = "EjemploWebViafirmaClientDotNet.resources.cer.pfx";
+            DEMO_P12_PATH = "EjemploWebViafirmaClientDotNet.resources.ecc-fnmt.p12";
             DEMO_FILE_PDF_PATH_10_PAGS = "EjemploWebViafirmaClientDotNet.resources.Loremipsum_10_pags.pdf";
             DEMO_FILE_PDF_PATH_10_PAGS_SIGNED = "EjemploWebViafirmaClientDotNet.resources.10_pag_firmado.pdf";
             DEMO_FILE_XML_PATH = "EjemploWebViafirmaClientDotNet.resources.absis.xml";

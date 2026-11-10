@@ -83,12 +83,11 @@ namespace EjemploWebViafirmaClientDotNet.firmaServer
                 Response.AddHeader("Content-Disposition", "attachment; filename=" + "Lote_firmado_servidor.xml");
                 Response.Buffer = true;
                 ((System.IO.MemoryStream)stream).WriteTo(Response.OutputStream);
-                Response.End();
             }
             catch (Exception ex)
             {
                 Response.Write(ex.Message);
-                // An error occurred.. 
+                // An error occurred..
             }
             finally
             {
@@ -96,6 +95,7 @@ namespace EjemploWebViafirmaClientDotNet.firmaServer
                 {
                     stream.Close();
                 }
+                Response.End();
             }
         }
     }
